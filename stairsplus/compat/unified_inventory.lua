@@ -20,14 +20,14 @@ unified_inventory.register_category("stairsplus:cuttable", {
 	index = 0,
 	items = {}
 })
-
+--[[
 unified_inventory.register_category("stairsplus:cut_node", {
 	symbol = "stairsplus:circular_saw",
 	label = "Nodes cut in the circular saw",
 	index = 0,
 	items = {}
 })
-
+]]--
 local function on_register_single(node, shaped_name)
 	unified_inventory.register_craft({
 		output = shaped_name,
@@ -37,7 +37,7 @@ local function on_register_single(node, shaped_name)
 	})
 
 	unified_inventory.add_category_item("stairsplus:cuttable", node)
-	unified_inventory.add_category_item("stairsplus:cut_node", shaped_name)
+	-- unified_inventory.add_category_item("stairsplus:cut_node", shaped_name)
 end
 
 for _, single in ipairs(api.registered_singles) do

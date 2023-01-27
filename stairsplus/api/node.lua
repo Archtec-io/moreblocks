@@ -165,19 +165,21 @@ function api.register_single(node, shape, overrides, meta)
 	end
 
 	if not meta.allow_override_groups and overrides.groups then
+		--[[
 		stairsplus.log("warning", "removing group overrides from %s (was %s, will be %s)",
 			shaped_name, minetest.write_json(overrides.groups), minetest.write_json(def.groups)
 		)
+		]]--
 		overrides.groups = nil
 	end
 
 	if not meta.allow_override_drawtype and overrides.drawtype then
-		stairsplus.log("warning", "removing drawtype override %s from %s", overrides.drawtype, shaped_name)
+		-- stairsplus.log("warning", "removing drawtype override %s from %s", overrides.drawtype, shaped_name)
 		overrides.drawtype = nil
 	end
 
 	if not meta.allow_override_paramtype2 and overrides.paramtype2 then
-		stairsplus.log("warning", "removing paramtype2 override %s from %s", overrides.paramtype2, shaped_name)
+		-- stairsplus.log("warning", "removing paramtype2 override %s from %s", overrides.paramtype2, shaped_name)
 		overrides.paramtype2 = nil
 	end
 
